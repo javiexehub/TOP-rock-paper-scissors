@@ -9,7 +9,9 @@ console.log("Helluu")
 // Your game will be played against the computer. You will write a function that randomly returns “rock”, “paper” or “scissors”.
 
 // #1 understand the problem:
-//      Create a program, that generates a random number between 1 and 3, if it generates 1 return rock, 2  paper, and 3 scisssors.
+//      Create a function, that generates a random number between 1 and 3, if it generates 1 return rock, 2  paper, and 3 scisssors.
+//      Create a function that asks the user to choice between rock paper and scissors.
+//      Create a function that 
 
 // #2 PLAN:
 //      No plan, lets pseudocode.
@@ -60,7 +62,7 @@ function getComputerChoice(){
 //  IF randomInt equals 1 THEN
     if (randomInt === 1) {
 //      PUT "ROCK" in computerChoice
-        computerChoice = "ROCK";
+        computerChoice = "rock";
 //      RETURN computerChoice
         return computerChoice;
 //  ENDIF
@@ -68,7 +70,7 @@ function getComputerChoice(){
 //  ELSEIF randomInt equals 2 THEN
     else if (randomInt === 2) {
 //      PUT "PAPER" in computerChoice
-        computerChoice = "PAPER";
+        computerChoice = "paper";
 //      RETURN computerChoice
         return computerChoice;
 //  ENDELSEIF
@@ -76,11 +78,39 @@ function getComputerChoice(){
 //  ELSEIF randomInt equals 3 THEN
     else if (randomInt === 3) {
 //      PUT SCISSORS in computerChoice
-        computerChoice = "SCISSORS";
+        computerChoice = "scissors";
 //      RETURN computerChoice
         return computerChoice;
 //  ENDELSEIF
     }
 //ENDFUNCTION
 }
+
+//FUNCTION getHumanChoice
+//  CREATE a string variable for humanChoice
+//  ASK the user for "Type 1 for Rock, 2 for Paper and 3 for Scissors" and put the answer in humanChoice
+//  IF the answer is equals to 1, return "rock"
+//  ENDIF
+//  ELSEIF answer is equal to 2, return "paper"
+//  ENDELSEIF
+//  ELSEIF answer is equal to 3, return "scissors"
+
+function getHumanChoice(){
+    let humanChoice = ""
+    let fc = +prompt("Type 1 for Rock, 2 for Paper and 3 for Scissors")
+    if (fc === 1) {
+        humanChoice = "rock";
+        return humanChoice;
+    }
+    else if (fc === 2) {
+        humanChoice = "paper";
+        return humanChoice;
+    }
+    else if (fc === 3) {
+        humanChoice = "scissors";
+        return humanChoice;
+    }
+}
+
+
 
