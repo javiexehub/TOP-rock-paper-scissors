@@ -102,20 +102,39 @@ function getHumanChoice(){
         return humanChoice;
     }
     else {
-        alert('Invalid input');
+        return alert('Error, next');
     }
 }
 
 //Declare the players score variables
-const computerScore = 0;
+var computerScore = 0;
 var humanScore = 0;
 
 //FUNCTION playSingleRound (computerScore, humanScore)
-//  FOR
+//  IF computerChoice equals humanChoice THEN
+//      SHOW "You both chose" humanChoice
+//  ENDIF
+//  ELSE IF humanChoice equals "rock" and computerChoice equals  "paper" or "scissors" AND computerChoice equalls
 
-function playRound (computerScore, humanScore){
+function playRound (computerChoice, humanChoice){
+    if (computerChoice === humanChoice) {
+        console.log("You both chose " + humanChoice)
+    }
+    else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "scissors" && computerChoice === "paper"){
+        console.log("You won! " + humanChoice + " beats " + computerChoice);
+        humanScore += 1;
+    }
+    else if (humanChoice == undefined) {
+        alert('Invalid input, try againmmmmmm')
+    }
+    else {
+        console.log("COMPUTER WINSSS! " + humanChoice + " loses to " + computerChoice)
+        computerScore += 1;
+    }
 
 }
 
 const computerSelection = getComputerChoice();
 const humanSelection = getHumanChoice();
+
+playRound(computerSelection, humanSelection);
