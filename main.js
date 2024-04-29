@@ -97,20 +97,25 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let humanChoice = ""
-    let fc = +prompt("Type 1 for Rock, 2 for Paper and 3 for Scissors")
-    if (fc === 1) {
-        humanChoice = "rock";
+    humanChoice = prompt("Rock, paper or Scissors?").toLowerCase()
+    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
         return humanChoice;
     }
-    else if (fc === 2) {
-        humanChoice = "paper";
-        return humanChoice;
-    }
-    else if (fc === 3) {
-        humanChoice = "scissors";
-        return humanChoice;
+    else {
+        alert('Invalid input');
     }
 }
 
+//Declare the players score variables
+const computerScore = 0;
+var humanScore = 0;
 
+//FUNCTION playSingleRound (computerScore, humanScore)
+//  FOR
 
+function playRound (computerScore, humanScore){
+
+}
+
+const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
