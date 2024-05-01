@@ -109,6 +109,7 @@ function getHumanChoice(){
 //Declare the players score variables
 var computerScore = 0;
 var humanScore = 0;
+var draws = 0;
 
 //FUNCTION playSingleRound (computerScore, humanScore)
 //  IF computerChoice equals humanChoice THEN
@@ -118,7 +119,8 @@ var humanScore = 0;
 
 function playRound (computerChoice, humanChoice){
     if (computerChoice === humanChoice) {
-        console.log("You both chose " + humanChoice)
+        console.log("You both chose " + humanChoice);
+        draws += 1;
     }
     else if (humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "scissors" && computerChoice === "paper"){
         console.log("You won! " + humanChoice + " beats " + computerChoice);
@@ -134,7 +136,41 @@ function playRound (computerChoice, humanChoice){
 
 }
 
-const computerSelection = getComputerChoice();
-const humanSelection = getHumanChoice();
+//Your game will play 5 rounds. You will write a function named playGame that calls playRound to play 5 rounds, keeps track of the scores and declares a winner at the end.
 
-playRound(computerSelection, humanSelection);
+//FUNCTION playGame
+//  Call get choices functions 5 times
+//  call playRound(computerSelection, humanSelection) 5 times
+//  keeps track of the scores
+//  declares a winner at the end.
+
+
+function playGame(rounds){
+    for (i = 0; i < rounds; i++){
+        const computerSelection = getComputerChoice();
+        const humanSelection = getHumanChoice();
+        playRound(computerSelection, humanSelection);
+    }
+    let winner = getWinner(computerScore, humanScore);
+    console.log("And the ULTIMATE winner is!!!: " + winner);
+    console.log(`Scores:
+
+    PC: ` + computerScore + `
+    Human: ` + humanScore + `
+    Draws: ` + draws)
+}
+
+function getWinner(computerScore, humanScore){
+    if (computerScore == humanScore){
+        return "NOFUCkingBOdy, or both. It's a draw."
+    }
+    else if (computerScore > humanScore){
+        return "THE BIG RED MACHINE";
+    }
+    else {
+        return "The monkey boy"
+    }
+
+}
+
+playGame(3);
